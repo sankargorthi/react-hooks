@@ -1,4 +1,92 @@
+html {
+  font-size: 12px;
+}
+
+:active,
+input,
+select {
+  outline: none;
+}
+
+#root {
+  height: calc(100vh - 10rem);
+  width: calc(100vw - 10rem);
+  padding: 5rem;
+  background: hsl(50, 40%, 80%);
+}
+
 .App {
   margin: 20px;
 }
 
+.App h1 {
+  font-size: 3.2rem;
+  color: hsl(220, 40%, 70%);
+  text-shadow: 2px 2px 5px hsl(0, 40%, 5%);
+}
+
+.App select {
+  width: 30rem;
+  height: 4rem;
+  display: block;
+  font-size: 2rem;
+}
+
+.App form {
+  margin: 3rem 0;
+  font-size: 2rem;
+  display: flex;
+  width: 30rem;
+  position: relative;
+}
+
+.App form button,
+.App form input {
+  font-size: 2rem;
+}
+
+.App form input {
+  width: 27rem;
+}
+
+.App form button:first-child {
+  order: 3;
+}
+
+.App form button:last-child {
+  position: absolute;
+  border: none;
+  background: white;
+  color: gray;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 3.2rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.App ul {
+  padding: 5rem 0 5rem 2rem;
+  background-color: hsl(225, 40%, 80%)
+}
+.App ul,
+.App ul li {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px white;
+}
+
+.App ul li,
+.App ul li button {
+  font-size: 3rem;
+  margin-right: 2rem;
+}
+.App ul li button:hover {
+  background: gray;
+  cursor: pointer;
+}
+
+.App ul li button:active {
+  background-color: hsl(0, 40%, 80%);
+}

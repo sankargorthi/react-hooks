@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
 import isEqual from 'lodash/isEqual';
 import without from 'lodash/without';
+import React, { Component } from 'react';
+import AddItem from './AddItem';
 import Items from './Items';
 
 class Todos extends Component {
@@ -30,6 +31,20 @@ class Todos extends Component {
     this.setState(({ todos }) => ({ todos: without(todos, item) }));
   };
 
+  add = async item => {
+    await fetch(`/todos/${this.props.user}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify({
+        item
+      })
+    });
+    this.setState({ todos: [...this.state.todos, item] });
+  };
+
   shouldComponentUpdate({ user }, { todos }) {
     return this.props.user !== user || !isEqual(todos, this.state.todos);
   }
@@ -43,7 +58,12 @@ class Todos extends Component {
   }
 
   render() {
-    return <Items items={this.state.todos} del={this.del} />;
+    return (
+      <>
+        <AddItem add={this.add} />
+        <Items items={this.state.todos} del={this.del} />
+      </>
+    );
   }
 }
 

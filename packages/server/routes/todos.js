@@ -16,10 +16,17 @@ router
   .get(function(req, res) {
     res.json(todos[req.params.user]);
   })
+  .put(function(req, res) {
+    const {user} = req.params;
+    const {item} = req.body;
+    console.log(user, 'is adding', item);
+    todos[user] = [...todos[user], item];
+    res.sendStatus(200);
+  })
   .delete(function(req, res) {
     const { user } = req.params;
     const { item } = req.body;
-    console.log(req.body);
+    console.log(user, 'is deleting', item);
     todos[user] = without(todos[user], item);
     res.sendStatus(200);
   });
