@@ -3,11 +3,11 @@ var without = require("lodash/without");
 var router = express.Router();
 
 const todos = {
-  atharva: ["Bananas 🍌", "Oranges 🍊", "Carrots 🥕"],
+  appolonia: ["Bananas 🍌", "Oranges 🍊", "Carrots 🥕"],
   bhargava: ["Bananas 🍌", "Oranges 🍊", "Carrots 🥕"],
-  chander: ["Bananas 🍌", "Oranges 🍊", "Carrots 🥕"],
+  chandana: ["Bananas 🍌", "Oranges 🍊", "Carrots 🥕"],
   david: ["Bananas 🍌", "Oranges 🍊", "Carrots 🥕"],
-  emmanuel: ["Bananas 🍌", "Oranges 🍊", "Carrots 🥕"],
+  emmanuelle: ["Bananas 🍌", "Oranges 🍊", "Carrots 🥕"],
   faris: ["Bananas 🍌", "Oranges 🍊", "Carrots 🥕"]
 };
 
